@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes ufo-fly {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(200vw); }
+}
+
+.animate-ufo-fly {
+  animation: ufo-fly 5s linear infinite;
+}
+
+.shooting-star {
+  position: fixed;
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(to right, white, transparent);
+  opacity: 0.8;
+  z-index: 20;
+  transform: rotate(-45deg);
+  animation: shoot 1.5s ease-out forwards;
+}
+
+@keyframes shoot {
+  0% {
+    transform: translateX(0) translateY(0) rotate(-140deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(500px) translateY(200px) rotate(-140deg);
+    opacity: 0;
+  }
+}
+
+.ufo-glow {
+  filter: drop-shadow(0 0 10px #00ffcc);
+}
+
+.ufo-trail {
+  position: absolute;
+  top: 50%;
+  left: -100px;
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(to left, #00ffccaa, transparent);
+  transform: translateY(-50%) rotate(0deg);
+  animation: trail-fade 2s linear infinite;
+  opacity: 0.5;
+}
+
+@keyframes trail-fade {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-50%) translateX(50px);
+  }
+}
+
+
+.ufo-particle {
+  position: fixed;
+  width: 1px;
+  height: 1px;
+  border-radius: 50%;
+  background: #00ffcc;
+  opacity: 0.6;
+  z-index: 30;
+  pointer-events: none;
+  animation: particle-trail 1s ease-out forwards;
+}
+
+@keyframes particle-trail {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-20px, 20px) scale(0.2);
+    opacity: 0;
+  }
+}
+
+.fp-watermark {
+  display: none !important;
+}
+section {
+  height: 100vh;
+}
