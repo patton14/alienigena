@@ -101,7 +101,7 @@ const PortafolioPage = () => {
       <main
         ref={scrollRef}
         data-scroll-container
-        className="overflow-hidden text-white bg-gradient-to-b from-[#2d0d53] to-[#180431] min-h-screen"
+        className="overflow-hidden text-white bg-gradient-to-b from-[#2d0d53] to-[#180431]"
       >
 
         <section
